@@ -26,7 +26,7 @@ module.exports = function(msg) {
             return;
         }
         banmanager.setban(_id, time);
-        if (msg.client.isOwner) {
+        if (msg.client.isOwner()) {
             msg.client.kickBan(_id, Math.min(36e5, time));
         } else {
             msg.client.say(_id + ' will be banned when I have the crown.');

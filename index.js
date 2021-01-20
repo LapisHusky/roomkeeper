@@ -4,7 +4,7 @@ const banmanager = require('./banmanager.js');
 
 const permissions = require('./permissions.json');
 
-const client = new MPPClient(undefined, 'insert your proxy here');
+const client = new MPPClient(undefined, undefined);
 
 exports.client = client;
 
@@ -47,7 +47,7 @@ client.on('a', msg => {
 });
 
 client.on('ch', msg => {
-    if (client.isOwner) {
+    if (client.isOwner()) {
         msg.ppl.forEach(user => {
             const time = banmanager.checkban(user._id);
             if (time > 0) {

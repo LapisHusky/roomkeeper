@@ -13,7 +13,7 @@ module.exports = function(msg) {
     }
     ppl.forEach(_id => {
         banmanager.unban(_id);
-        if (msg.client.isOwner) {
+        if (msg.client.isOwner()) {
             msg.client.unban(_id);
             msg.client.say('Unbanned ' + _id);
         } else {

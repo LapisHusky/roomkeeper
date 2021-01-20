@@ -1,5 +1,5 @@
 module.exports = function(msg) {
-    if (!msg.client.isOwner) {
+    if (!msg.client.isOwner()) {
         msg.client.say('I don\'t currently have the crown.');
         return;
     }
